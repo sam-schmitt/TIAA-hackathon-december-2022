@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useContext, useState } from "react";
 import hairTypes from "../avatar-state/hair";
 import pantsTypes from "../avatar-state/pants";
@@ -20,7 +21,9 @@ export default function EditAvatar() {
 		shoeType,
 		setShoeType,
 	} = useContext(Context);
-
+	const myLoader = ({ src, width, quality }) => {
+		return src;
+	};
 	return (
 		<div>
 			<Head>
@@ -36,65 +39,110 @@ export default function EditAvatar() {
 			<p>Your skin: {skinTypes[skinType].name}</p>
 			{skinTypes.map(function (item, index) {
 				return (
-					<button
-						onClick={() => {
-							setSkinType(index);
-						}}
-					>
-						{item.name}
-					</button>
+					<>
+						<Image
+							loader={myLoader}
+							src={item.file}
+							style={{ height: 100, width: 100 }}
+							width={100}
+							height={100}
+						/>
+						<button
+							onClick={() => {
+								setSkinType(index);
+							}}
+						>
+							{item.name}
+						</button>
+					</>
 				);
 			})}
 			<h2>Hair</h2>
 			<p>Your hair: {hairTypes[hairType].name}</p>
 			{hairTypes.map(function (item, index) {
 				return (
-					<button
-						onClick={() => {
-							setHairType(index);
-						}}
-					>
-						{item.name}
-					</button>
+					<>
+						<Image
+							loader={myLoader}
+							src={item.file}
+							style={{ height: 100, width: 100 }}
+							width={100}
+							height={100}
+						/>
+						<button
+							onClick={() => {
+								setHairType(index);
+							}}
+						>
+							{item.name}
+						</button>
+					</>
 				);
 			})}
 			<h2>Shirt</h2>
 			<p>Your shirt: {shirtTypes[shirtType].name}</p>
 			{shirtTypes.map(function (item, index) {
 				return (
-					<button
-						onClick={() => {
-							setShirtType(index);
-						}}
-					>
-						{item.name}
-					</button>
+					<>
+						<Image
+							loader={myLoader}
+							src={item.file}
+							style={{ height: 100, width: 100 }}
+							width={100}
+							height={100}
+						/>
+						<button
+							onClick={() => {
+								setShirtType(index);
+							}}
+						>
+							{item.name}
+						</button>
+					</>
 				);
 			})}
 			<h2>Pants</h2>
 			<p>Your pants: {pantsTypes[pantsType].name}</p>
 			{pantsTypes.map(function (item, index) {
 				return (
-					<button
-						onClick={() => {
-							setPantsType(index);
-						}}
-					>
-						{item.name}
-					</button>
+					<>
+						<Image
+							loader={myLoader}
+							src={item.file}
+							style={{ height: 100, width: 100 }}
+							width={100}
+							height={100}
+						/>
+						<button
+							onClick={() => {
+								setPantsType(index);
+							}}
+						>
+							{item.name}
+						</button>
+					</>
 				);
 			})}
 			<h2>Shoes</h2>
 			<p>Your shoes: {shoeTypes[shoeType].name}</p>
 			{shoeTypes.map(function (item, index) {
 				return (
-					<button
-						onClick={() => {
-							setShoeType(index);
-						}}
-					>
-						{item.name}
-					</button>
+					<>
+						<Image
+							loader={myLoader}
+							src={item.file}
+							style={{ height: 100, width: 100 }}
+							width={100}
+							height={100}
+						/>
+						<button
+							onClick={() => {
+								setShoeType(index);
+							}}
+						>
+							{item.name}
+						</button>
+					</>
 				);
 			})}
 		</div>

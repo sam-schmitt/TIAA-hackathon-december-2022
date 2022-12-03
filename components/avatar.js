@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import hairTypes from "../avatar-state/hair";
 import pantsTypes from "../avatar-state/pants";
 import shirtTypes from "../avatar-state/shirt";
@@ -14,9 +14,6 @@ export default function CurrentAvatar() {
 		return src;
 	};
 
-	useEffect(() => {
-		console.log({ p: window.location.pathname });
-	});
 	return (
 		<div>
 			<p>Your Hair: {hairTypes[hairType].name}</p>
