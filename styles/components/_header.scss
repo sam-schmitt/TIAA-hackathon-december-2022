@@ -1,0 +1,34 @@
+@use "../var";
+@import "../mixins";
+
+.header {
+	padding: 1rem 2rem;
+	@include flex-container(row, space-between, center, nowrap);
+	.logo {
+		background-color: var.$primary-dark;
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 0.75rem;
+	}
+	nav {
+		@include flex-container(row, center, center, nowrap);
+		gap: 0.75rem;
+		a {
+			text-decoration: none;
+			color: var.$text;
+		}
+	}
+	.user {
+		@extend .shadow-card;
+		@include flex-container(row, flex-end, center, nowrap);
+		gap: 1rem;
+		padding: 0.5rem 1rem;
+		.avatar {
+			height: 2rem;
+			width: 2rem;
+			border-radius: 1rem;
+			background-color: var.$primary-light;
+		}
+	}
+	background-color: var.$primary-light;
+}
