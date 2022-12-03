@@ -5,9 +5,11 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: var.$font-body;
+	height: 100vh;
+	width: 100vw;
 }
 main {
 }
 
-@import "./pages/index";
+@import "./pages";
 @import "./components/index";

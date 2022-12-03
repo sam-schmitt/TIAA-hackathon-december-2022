@@ -5,7 +5,7 @@ import CurrentAvatar from "../components/avatar";
 export default function Home() {
 	const router = useRouter();
 	return (
-		<main>
+		<main id="home-page">
 			<Head>
 				<title>Youture</title>
 				<meta
@@ -14,13 +14,21 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<button
-				onClick={() => {
-					router.push("/edit-avatar");
-				}}>
-				Edit Avatar
-			</button>
-			<CurrentAvatar />
+			<div className="content">
+				<div className="cta"></div>
+				<div className="home"></div>
+				<div className="avatar">
+					<CurrentAvatar size={300} />
+					<button
+						className="primary"
+						onClick={() => {
+							router.push("/edit-avatar");
+						}}>
+						Edit Avatar
+					</button>
+				</div>
+				<div className="quick-actions"></div>
+			</div>
 		</main>
 	);
 }

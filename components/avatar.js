@@ -6,8 +6,9 @@ import shirtTypes from "../avatar-state/shirt";
 import shoeTypes from "../avatar-state/shoes";
 import skinTypes from "../avatar-state/skin";
 import { Context } from "../providers/Provider";
-
-export default function CurrentAvatar() {
+import eyes from "../public/avatar-images/eyes_and_mouth.png";
+import cane from "../public/avatar-images/cane.png";
+export default function CurrentAvatar({ size }) {
 	const { skinType, hairType, shirtType, pantsType, shoeType } =
 		useContext(Context);
 	const myLoader = ({ src, width, quality }) => {
@@ -15,46 +16,61 @@ export default function CurrentAvatar() {
 	};
 
 	return (
-		<div>
-			<p>Your Hair: {hairTypes[hairType].name}</p>
+		<div className="avatar">
+			{/* <p>Your Hair: {hairTypes[hairType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={hairTypes[hairType].file}
-				style={{ height: 100, width: 100 }}
-				width={100}
-				height={100}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
 			/>
-			<p>Your Skin: {skinTypes[skinType].name}</p>
+			{/* <p>Your Skin: {skinTypes[skinType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={skinTypes[skinType].file}
-				style={{ height: 100, width: 100 }}
-				width={100}
-				height={100}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
 			/>
-			<p>Your Shirt: {shirtTypes[shirtType].name}</p>
+			<Image
+				loader={myLoader}
+				src={eyes}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
+			/>
+			<Image
+				loader={myLoader}
+				src={cane}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
+			/>
+
+			{/* <p>Your Shirt: {shirtTypes[shirtType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={shirtTypes[shirtType].file}
-				style={{ height: 100, width: 100 }}
-				width={100}
-				height={100}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
 			/>
-			<p>Your Pants: {pantsTypes[pantsType].name}</p>
+			{/* <p>Your Pants: {pantsTypes[pantsType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={pantsTypes[pantsType].file}
-				style={{ height: 100, width: 100 }}
-				width={100}
-				height={100}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
 			/>
-			<p>Your Shoes: {shoeTypes[shoeType].name}</p>
+			{/* <p>Your Shoes: {shoeTypes[shoeType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={shoeTypes[shoeType].file}
-				style={{ height: 100, width: 100 }}
-				width={100}
-				height={100}
+				style={{ height: size, width: size }}
+				width={size}
+				height={size}
 			/>
 		</div>
 	);

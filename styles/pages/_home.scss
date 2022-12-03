@@ -1,0 +1,28 @@
+@use "../var";
+
+#home-page {
+	background-color: pink;
+	height: 100%;
+	.content {
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-rows: auto auto;
+
+		grid-template-areas: "cta quick-actions" "home quick-actions";
+		justify-content: stretch;
+		align-items: stretch;
+		.home {
+			background-color: red;
+			grid-area: home;
+		}
+		.cta {
+			background-color: purple;
+			grid-area: cta;
+		}
+		.quick-actions {
+			background-color: pink;
+			grid-area: quick-actions;
+		}
+	}
+}
