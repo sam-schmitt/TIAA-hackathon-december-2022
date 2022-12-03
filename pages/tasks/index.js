@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentAvatar from "../../components/avatar";
+import CurrentTask from "../../components/tasks/currentTask";
 import Progress from "../../components/tasks/progress";
 
 export default function TasksPage() {
@@ -12,9 +13,7 @@ export default function TasksPage() {
 				</div>
 				<div className="tasks">
 					<Progress />
-					<div class="shadow-card">
-						<h3>Current Task</h3>
-					</div>
+					<CurrentTask />
 					<h3>Tasks</h3>
 					<p>tasks</p>
 				</div>

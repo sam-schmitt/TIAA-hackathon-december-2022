@@ -8,21 +8,21 @@ export default function QuickActions() {
 		{
 			title: "Upgrade Your Retirement",
 			description:
-				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint culpa do voluptate ullamco nostrud ut. Reprehenderit proident laboris ullamco mollit aute proident est aute voluptate esse velit exercitation. Magna velit aute.",
+				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint",
 			icon: <AutoAwesomeIcon />,
 			url: "/upgrade",
 		},
 		{
 			title: "Upgrade Your Retirement",
 			description:
-				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint culpa do voluptate ullamco nostrud ut. Reprehenderit proident laboris ullamco mollit aute proident est aute voluptate esse velit exercitation. Magna velit aute.",
+				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint culpa do voluptate ullamco nostrud ut. ",
 			icon: <AutoAwesomeIcon />,
 			url: "/upgrade",
 		},
 		{
 			title: "Upgrade Your Retirement",
 			description:
-				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint culpa do voluptate ullamco nostrud ut. Reprehenderit proident laboris ullamco mollit aute proident est aute voluptate esse velit exercitation. Magna velit aute.",
+				"Dolore amet nisi consectetur consequat  ullamco mollit aute proident est aute .",
 			icon: <AutoAwesomeIcon />,
 			url: "/upgrade",
 		},
