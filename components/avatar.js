@@ -16,8 +16,7 @@ export default function CurrentAvatar({ size }) {
 	};
 
 	return (
-		<div className="avatar">
-			{/* <p>Your Hair: {hairTypes[hairType].name}</p> */}
+		<div className="avatar" style={{ height: size, width: size }}>
 			<Image
 				loader={myLoader}
 				src={hairTypes[hairType].file}
@@ -25,7 +24,6 @@ export default function CurrentAvatar({ size }) {
 				width={size}
 				height={size}
 			/>
-			{/* <p>Your Skin: {skinTypes[skinType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={skinTypes[skinType].file}
@@ -47,8 +45,6 @@ export default function CurrentAvatar({ size }) {
 				width={size}
 				height={size}
 			/>
-
-			{/* <p>Your Shirt: {shirtTypes[shirtType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={shirtTypes[shirtType].file}
@@ -56,7 +52,6 @@ export default function CurrentAvatar({ size }) {
 				width={size}
 				height={size}
 			/>
-			{/* <p>Your Pants: {pantsTypes[pantsType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={pantsTypes[pantsType].file}
@@ -64,7 +59,6 @@ export default function CurrentAvatar({ size }) {
 				width={size}
 				height={size}
 			/>
-			{/* <p>Your Shoes: {shoeTypes[shoeType].name}</p> */}
 			<Image
 				loader={myLoader}
 				src={shoeTypes[shoeType].file}

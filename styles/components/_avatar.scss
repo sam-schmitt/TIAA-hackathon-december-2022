@@ -6,3 +6,38 @@
 		left: 0;
 	}
 }
+.create-avatar {
+	@include flex-container(row, center, center, nowrap);
+	@extend .shadow-card;
+	.edit-container {
+		height: 100%;
+		@include flex-container(column, center, flex-start, nowrap);
+	}
+}
+.row {
+	@include flex-container(row, flex-start, center, nowrap);
+	button {
+		padding: 0.25rem;
+		border-radius: 0.25rem;
+		&:hover {
+			background-color: var.$fg;
+		}
+	}
+}
+// .create-avatar {
+// 	position: relative;
+// 	height: 20rem;
+// 	div {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		bottom: 0;
+// 		height: 100%;
+// 		@include flex-container(row, flex-start, center, nowrap);
+// 		.description {
+// 			background-color: red;
+// 			width: 12ch;
+
+// 		}
+// 	}
+// }

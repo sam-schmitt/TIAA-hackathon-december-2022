@@ -23,13 +23,13 @@ export default function Home() {
 				</div>
 				<div className="home">
 					<Room />
-					<div className="avatar-container">
-						<CurrentAvatar size={300} />
-					</div>
 				</div>
-				<div className="quick-actions">
+				<div className="avatar-container">
+					<CurrentAvatar size={300} />
+				</div>
+				{/* <div className="quick-actions">
 					<QuickActions />
-				</div>
+				</div> */}
 			</div>
 		</main>
 	);

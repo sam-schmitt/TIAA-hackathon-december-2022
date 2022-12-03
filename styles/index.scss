@@ -1,5 +1,5 @@
 @use "./var";
-@use "./mixins";
+@import "./mixins";
 html,
 body {
 	padding: 0;
@@ -15,6 +15,12 @@ body {
 main {
 	max-width: 65rem;
 	margin: 0 auto;
+	.page-title {
+		&.center {
+			text-align: center;
+			@include flex-container(row, center, center, nowrap);
+		}
+	}
 }
 
 @import "./pages";

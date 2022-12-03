@@ -6,8 +6,10 @@ import pantsTypes from "../avatar-state/pants";
 import shirtTypes from "../avatar-state/shirt";
 import shoeTypes from "../avatar-state/shoes";
 import skinTypes from "../avatar-state/skin";
+import CurrentAvatar from "../components/avatar";
 import { Context } from "../providers/Provider";
-
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function EditAvatar() {
 	const {
 		skinType,
@@ -24,127 +26,125 @@ export default function EditAvatar() {
 	const myLoader = ({ src, width, quality }) => {
 		return src;
 	};
+	let size = 200;
+	function handleIncrease(value, max) {
+		if (value === max) {
+			return 0;
+		} else {
+			return value + 1;
+		}
+	}
+	function handleDecrease(value, max) {
+		if (value === 0) {
+			return max;
+		} else {
+			return value - 1;
+		}
+	}
 	return (
-		<div>
+		<main id="edit-avatar">
 			<Head>
 				<title>Youture</title>
 				<meta
-					name='description'
-					content='Learn about how to make your retirement fund better by visualizing your future self!'
+					name="description"
+					content="Learn about how to make your retirement fund better by visualizing your future self!"
 				/>
-				<link rel='icon' href='/favicon.ico' />
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<h1>Create Avatar</h1>
-			<h2>Skin</h2>
-			<p>Your skin: {skinTypes[skinType].name}</p>
-			{skinTypes.map(function (item, index) {
-				return (
-					<>
-						<Image
-							loader={myLoader}
-							src={item.file}
-							style={{ height: 100, width: 100 }}
-							width={100}
-							height={100}
-						/>
-						<button
-							onClick={() => {
-								setSkinType(index);
-							}}
-						>
-							{item.name}
-						</button>
-					</>
-				);
-			})}
-			<h2>Hair</h2>
-			<p>Your hair: {hairTypes[hairType].name}</p>
-			{hairTypes.map(function (item, index) {
-				return (
-					<>
-						<Image
-							loader={myLoader}
-							src={item.file}
-							style={{ height: 100, width: 100 }}
-							width={100}
-							height={100}
-						/>
-						<button
-							onClick={() => {
-								setHairType(index);
-							}}
-						>
-							{item.name}
-						</button>
-					</>
-				);
-			})}
-			<h2>Shirt</h2>
-			<p>Your shirt: {shirtTypes[shirtType].name}</p>
-			{shirtTypes.map(function (item, index) {
-				return (
-					<>
-						<Image
-							loader={myLoader}
-							src={item.file}
-							style={{ height: 100, width: 100 }}
-							width={100}
-							height={100}
-						/>
-						<button
-							onClick={() => {
-								setShirtType(index);
-							}}
-						>
-							{item.name}
-						</button>
-					</>
-				);
-			})}
-			<h2>Pants</h2>
-			<p>Your pants: {pantsTypes[pantsType].name}</p>
-			{pantsTypes.map(function (item, index) {
-				return (
-					<>
-						<Image
-							loader={myLoader}
-							src={item.file}
-							style={{ height: 100, width: 100 }}
-							width={100}
-							height={100}
-						/>
-						<button
-							onClick={() => {
-								setPantsType(index);
-							}}
-						>
-							{item.name}
-						</button>
-					</>
-				);
-			})}
-			<h2>Shoes</h2>
-			<p>Your shoes: {shoeTypes[shoeType].name}</p>
-			{shoeTypes.map(function (item, index) {
-				return (
-					<>
-						<Image
-							loader={myLoader}
-							src={item.file}
-							style={{ height: 100, width: 100 }}
-							width={100}
-							height={100}
-						/>
-						<button
-							onClick={() => {
-								setShoeType(index);
-							}}
-						>
-							{item.name}
-						</button>
-					</>
-				);
-			})}
-		</div>
+			<div className="page-title center">
+				<h1>Create Your Avatar!</h1>
+			</div>
+			<div className="content">
+				<div class="create-avatar">
+					<CurrentAvatar size={300} />
+					<div class="edit-container" style={{ height: 300 }}>
+						<div class="row">
+							<button
+								onClick={() => {
+									setHairType(handleIncrease(hairType, hairTypes.length - 1));
+								}}>
+								<ArrowBackIosIcon />
+							</button>
+							<button
+								onClick={() => {
+									setHairType(handleIncrease(hairType, hairTypes.length - 1));
+								}}>
+								<ArrowForwardIosIcon />
+							</button>
+							<p className="description">Hair Style</p>
+						</div>
+						<div class="row">
+							<button
+								onClick={() => {
+									setSkinType(handleIncrease(skinType, skinTypes.length - 1));
+								}}>
+								<ArrowBackIosIcon />
+							</button>
+							<button
+								onClick={() => {
+									setSkinType(handleIncrease(skinType, skinTypes.length - 1));
+								}}>
+								<ArrowForwardIosIcon />
+							</button>
+							<p className="description">Skin Color</p>
+						</div>
+						<div class="row">
+							<button
+								onClick={() => {
+									setShirtType(
+										handleIncrease(shirtType, shirtTypes.length - 1)
+									);
+								}}>
+								<ArrowBackIosIcon />
+							</button>
+							<button
+								onClick={() => {
+									setShirtType(
+										handleDecrease(shirtType, shirtTypes.length - 1)
+									);
+								}}>
+								<ArrowForwardIosIcon />
+							</button>
+							<p class="description">Shirt Color</p>
+						</div>
+						<div class="row"></div>
+						<div className="row">
+							<button
+								onClick={() => {
+									setPantsType(
+										handleIncrease(pantsType, pantsTypes.length - 1)
+									);
+								}}>
+								<ArrowBackIosIcon />
+							</button>
+							<button
+								onClick={() => {
+									setPantsType(
+										handleDecrease(pantsType, pantsTypes.length - 1)
+									);
+								}}>
+								<ArrowForwardIosIcon />
+							</button>
+							<p class="description">Pants Color</p>
+						</div>
+						<div className="row">
+							<button
+								onClick={() => {
+									setShoeType(handleIncrease(shoeType, shoeTypes.length - 1));
+								}}>
+								<ArrowBackIosIcon />
+							</button>
+							<button
+								onClick={() => {
+									setShoeType(handleDecrease(shoeType, shoeTypes.length - 1));
+								}}>
+								<ArrowForwardIosIcon />
+							</button>
+							<p class="description">Shoe Color</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 	);
 }
