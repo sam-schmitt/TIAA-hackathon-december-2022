@@ -1,15 +1,15 @@
 const hairTypes = [
 	{
 		name: "bald",
-		file: "",
+		file: "../avatar-images/sideburns hair.png",
 	},
 	{
 		name: "short",
-		file: "",
+		file: "../avatar-images/short hair.png",
 	},
 	{
 		name: "long",
-		file: "",
+		file: "../avatar-images/long hair.png",
 	},
 ];
 

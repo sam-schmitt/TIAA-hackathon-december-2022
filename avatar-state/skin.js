@@ -1,15 +1,15 @@
 const skinTypes = [
 	{
 		name: "peach",
-		file: "",
+		file: "../avatar-images/skin peach.png",
 	},
 	{
 		name: "light-brown",
-		file: "",
+		file: "../avatar-images/skin light brown.png",
 	},
 	{
 		name: "dark-brown",
-		file: "",
+		file: "../avatar-images/skin dark brown.png",
 	},
 ];
 

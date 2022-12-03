@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
 
 const AllData = () => {
-	const [hairType, setHairType] = useState("");
-	const [pantsType, setPantsType] = useState("");
-	const [shirtType, setShirtType] = useState("");
-	const [shoeType, setShoeType] = useState("");
-	const [skinType, setSkinType] = useState("");
+	const [hairType, setHairType] = useState(0);
+	const [pantsType, setPantsType] = useState(0);
+	const [shirtType, setShirtType] = useState(0);
+	const [shoeType, setShoeType] = useState(0);
+	const [skinType, setSkinType] = useState(0);
 
 	const provider = useMemo(
 		() => ({

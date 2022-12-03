@@ -1,7 +1,7 @@
 const shirtTypes = [
-	{ name: "red", file: "" },
-	{ name: "blue", file: "" },
-	{ name: "brown", file: "" },
+	{ name: "red", file: "../avatar-images/red shirt.png" },
+	{ name: "blue", file: "../avatar-images/blue shirt.png" },
+	{ name: "brown", file: "../avatar-images/brown shirt.png" },
 ];
 
 export default shirtTypes;

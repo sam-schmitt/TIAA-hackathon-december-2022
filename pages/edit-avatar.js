@@ -33,12 +33,12 @@ export default function EditAvatar() {
 			</Head>
 			<h1>Create Avatar</h1>
 			<h2>Skin</h2>
-			<p>Your skin: {skinType}</p>
+			<p>Your skin: {skinTypes[skinType].name}</p>
 			{skinTypes.map(function (item, index) {
 				return (
 					<button
 						onClick={() => {
-							setSkinType(item.name);
+							setSkinType(index);
 						}}
 					>
 						{item.name}
@@ -46,12 +46,12 @@ export default function EditAvatar() {
 				);
 			})}
 			<h2>Hair</h2>
-			<p>Your hair: {hairType}</p>
+			<p>Your hair: {hairTypes[hairType].name}</p>
 			{hairTypes.map(function (item, index) {
 				return (
 					<button
 						onClick={() => {
-							setHairType(item.name);
+							setHairType(index);
 						}}
 					>
 						{item.name}
@@ -59,12 +59,12 @@ export default function EditAvatar() {
 				);
 			})}
 			<h2>Shirt</h2>
-			<p>Your shirt: {shirtType}</p>
+			<p>Your shirt: {shirtTypes[shirtType].name}</p>
 			{shirtTypes.map(function (item, index) {
 				return (
 					<button
 						onClick={() => {
-							setShirtType(item.name);
+							setShirtType(index);
 						}}
 					>
 						{item.name}
@@ -72,12 +72,12 @@ export default function EditAvatar() {
 				);
 			})}
 			<h2>Pants</h2>
-			<p>Your pants: {pantsType}</p>
+			<p>Your pants: {pantsTypes[pantsType].name}</p>
 			{pantsTypes.map(function (item, index) {
 				return (
 					<button
 						onClick={() => {
-							setPantsType(item.name);
+							setPantsType(index);
 						}}
 					>
 						{item.name}
@@ -85,12 +85,12 @@ export default function EditAvatar() {
 				);
 			})}
 			<h2>Shoes</h2>
-			<p>Your shoes: {shoeType}</p>
+			<p>Your shoes: {shoeTypes[shoeType].name}</p>
 			{shoeTypes.map(function (item, index) {
 				return (
 					<button
 						onClick={() => {
-							setShoeType(item.name);
+							setShoeType(index);
 						}}
 					>
 						{item.name}
