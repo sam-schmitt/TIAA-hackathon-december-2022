@@ -1,15 +1,15 @@
 const shoeTypes = [
 	{
 		name: "white",
-		file: "",
+		file: "../avatar-images/white shoes.png",
 	},
 	{
 		name: "brown",
-		file: "",
+		file: "../avatar-images/brown shoes.png",
 	},
 	{
 		name: "black",
-		file: "",
+		file: "../avatar-images/black shoes.png",
 	},
 ];
 
