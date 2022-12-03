@@ -1,0 +1,16 @@
+@use "../var";
+
+#task-page {
+	.content {
+		display: grid;
+		grid-template-columns: 1fr 3fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "side main";
+		.tasks {
+			grid-area: main;
+		}
+		.side {
+			grid-area: side;
+		}
+	}
+}

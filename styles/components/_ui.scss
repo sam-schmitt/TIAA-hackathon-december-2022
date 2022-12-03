@@ -21,3 +21,19 @@ button.primary {
 	);
 	font-size: 1.25rem;
 }
+
+.action-card {
+	margin-bottom: 1rem;
+	@extend .shadow-card;
+	.header {
+		@include flex-container(row, space-between, center, nowrap);
+	}
+	p {
+		margin-block: 0.5rem;
+	}
+	.icon {
+		.MuiSvgIcon-root {
+			font-size: 3rem;
+		}
+	}
+}

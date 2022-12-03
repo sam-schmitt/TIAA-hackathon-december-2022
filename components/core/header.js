@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import React from "react";
-
+import SettingsIcon from "@mui/icons-material/Settings";
 export default function Header({}) {
+	const router = useRouter();
 	const links = [
 		{
 			text: "Home",
@@ -16,16 +18,20 @@ export default function Header({}) {
 		},
 	];
 	return (
-		<div className="header">
+		<div id="page-header">
 			<div className="logo"></div>
 			<nav>
 				{links.map((item) => {
-					return <a href={item.url}>{item.text}</a>;
+					return (
+						<button onClick={() => router.push(item.url)}>{item.text}</button>
+					);
 				})}
 			</nav>
-			<div className="user">
+			<div className="user" onClick={() => router.push("/settings")}>
 				Hi Name
-				<div class="avatar"></div>
+				<div class="avatar">
+					<SettingsIcon />
+				</div>
 			</div>
 		</div>
 	);
