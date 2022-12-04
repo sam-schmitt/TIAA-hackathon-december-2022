@@ -10,6 +10,12 @@ button {
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	font-size: 1.25rem;
+	@include flex-container(row, center, center, nowrap);
+	gap: 0.5rem;
+	.MiuSvgIcon-root {
+		line-height: 2.25rem;
+		vertical-align: center;
+	}
 }
 button.secondary {
 	border: 1px solid var.$primary-dark;
@@ -38,7 +44,9 @@ button.primary {
 .mt {
 	margin-top: 0.5rem;
 }
-
+.mr-auto {
+	margin-right: auto;
+}
 .center {
 	@include flex-container(column, center, center, nowrap);
 	margin: 0 auto;

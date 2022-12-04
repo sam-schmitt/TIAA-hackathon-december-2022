@@ -3,12 +3,17 @@
 
 #page-header {
 	z-index: 10 !important;
-	padding: 1rem 2rem;
-	@include flex-container(row, space-between, flex-end, nowrap);
+	padding: 0rem 2rem;
+	@include flex-container(row, space-between, center, nowrap);
 	.logo {
 		@include flex-container(row, flex-start, center, nowrap);
 		color: var.$primary-dark;
 		margin-block: 0.5rem;
+		h3 {
+			font-weight: 600;
+			font-size: 1.8rem;
+			margin-bottom: -3px;
+		}
 	}
 	nav {
 		@include flex-container(row, center, flex-end, nowrap);

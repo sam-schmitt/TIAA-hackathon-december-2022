@@ -23,15 +23,20 @@ export default function HomePage() {
 					<Room />
 				</div>
 				<div className="right">
-					<h3>Hi, {name ? name : "Name"}!</h3>
-					<h4>
-						Future You is feeling <i> {roomTypes[roomType].avatarEmotion}</i>{" "}
-					</h4>
-					<h3>
-						{roomTypes[roomType].emotes.map((item) => {
-							return item;
-						})}
-					</h3>
+					<div class="fixed-header">
+						<h3>Hi, {name ? name : "Name"}!</h3>
+						<h4>
+							Future You is feeling <i> {roomTypes[roomType].avatarEmotion}</i>{" "}
+						</h4>
+						<div>
+							<h3>
+								{roomTypes[roomType].emotes.map((item) => {
+									return item;
+								})}
+							</h3>
+						</div>
+					</div>
+					<div class="fixed-header-spacer"></div>
 					<CurrentAvatar size={400} />
 					<QuickActions />
 				</div>
