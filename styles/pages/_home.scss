@@ -20,8 +20,8 @@
 	}
 }
 #room-container {
-	width: 80vw;
-	height: 80vh;
+	width: 90vw;
+	overflow: hidden;
 }
 #home-page {
 	z-index: 1;
@@ -30,41 +30,125 @@
 		padding: 1rem;
 		width: 100%;
 		height: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: auto 1fr;
+		@include flex-container(row, center, flex-start, nowrap);
 
 		justify-content: stretch;
 		align-items: stretch;
 		gap: 1rem;
-		.room {
-			width: clamp(20rem, 100%, 70rem);
-			height: 100%;
-			z-index: -1;
-		}
-
-		.avatar-container {
+		.room-container {
 			grid-column: 1/2;
 			grid-row: 1/2;
-			background-color: #00000020;
-			color: var.$bg;
-			position: absolute;
-			backdrop-filter: blur(5px);
-			-webkit-backdrop-filter: blur(5px);
-			border-radius: 1rem;
-			@include flex-container(column, center, center, nowrap);
+			.avatar-container {
+				position: absolute;
+				bottom: 0;
+				z-index: 100;
+			}
+			#room {
+				width: 700px;
+				position: relative;
+				z-index: -1;
+				.title {
+					position: fixed;
+					z-index: 10;
+					background-color: var.$text;
+					color: var.$bg;
+					padding-inline: 1rem;
+					padding-block: 0.5rem;
+					border-bottom-right-radius: 0.25rem;
+				}
+
+				.picture {
+					border: 4px solid var.$text;
+					position: fixed;
+					z-index: 1;
+				}
+			}
 		}
+
 		.cta {
 			z-index: 2;
 		}
-		.quick-actions {
-			grid-row: 1/3;
-			grid-column: 3/4;
-			height: 200vh;
+	}
+}
+.avatar-container {
+	grid-column: 1/2;
+	grid-row: 1/2;
+	background-color: #00000020;
+	color: var.$bg;
+	position: absolute;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 1rem;
+	@include flex-container(column, center, center, nowrap);
+}
+.quick-actions {
+	grid-row: 1/3;
+	grid-column: 3/4;
+	padding: 1rem;
+	height: 200vh;
+	background-color: #ffffff20;
+	color: var.$text;
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	> .header {
+		text-align: center;
+		@include flex-container(column, center, center, nowrap);
+		background-color: var.$primary-light;
+		border: 1px solid var.$primary-dark;
+		margin-block: 1rem;
+		padding-block: 1rem;
+		border-radius: 0.5rem;
+	}
+	> .action-card {
+		margin-bottom: 1rem;
+		color: var.$text;
+		@extend .shadow-card;
+		@include flex-container(column, flex-start, flex-start, nowrap);
+		// padding: 0;
+		padding-block: 0;
+
+		p {
+			margin-block: 0.5rem;
+		}
+		.icon {
+			.MuiSvgIcon-root {
+				font-size: 3rem;
+			}
+		}
+		.content {
+			padding: 1rem;
+			width: 100%;
+			@include flex-container(column, flex-start, flex-start, nowrap);
+			.header {
+				margin-bottom: 1rem;
+
+				* {
+					margin-block: 0;
+				}
+			}
+			.stats {
+				width: 100%;
+				@include flex-container(row, space-between, center, nowrap);
+				.reward {
+					@include flex-container(column, center, center, nowrap);
+				}
+			}
+		}
+		.img-wrapper {
+			margin-top: 1rem;
+			box-sizing: content-box;
+			position: relative;
+			border-radius: 0.5rem;
+			overflow: hidden;
+		}
+		/* the magic happens here */
+		.image-wrapper > div {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+				0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
 		}
 	}
 }
-
 #create-account {
 	.form-container {
 		@include flex-container(row, center, flex-start, wrap);

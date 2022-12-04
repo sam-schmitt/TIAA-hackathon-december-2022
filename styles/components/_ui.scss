@@ -39,50 +39,6 @@ button.primary {
 	margin-top: 0.5rem;
 }
 
-.action-card {
-	margin-bottom: 1rem;
-	@extend .shadow-card;
-	@include flex-container(column, flex-start, flex-start, nowrap);
-	padding: 0;
-
-	p {
-		margin-block: 0.5rem;
-	}
-	.icon {
-		.MuiSvgIcon-root {
-			font-size: 3rem;
-		}
-	}
-	.content {
-		padding: 1rem;
-		width: 100%;
-		@include flex-container(column, flex-start, flex-start, nowrap);
-		.header {
-			margin-bottom: 1rem;
-
-			* {
-				margin-block: 0;
-			}
-		}
-		.stats {
-			width: 100%;
-			@include flex-container(row, space-between, center, nowrap);
-		}
-	}
-	.img-wrapper {
-		margin-top: 1rem;
-		box-sizing: content-box;
-		position: relative;
-		// border-radius: 1rem;
-		overflow: hidden;
-	}
-	/* the magic happens here */
-	.image-wrapper > div {
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		border-radius: 5px;
-	}
-}
-
 .center {
 	@include flex-container(column, center, center, nowrap);
 	margin: 0 auto;

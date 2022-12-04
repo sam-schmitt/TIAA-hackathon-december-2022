@@ -6,6 +6,9 @@
 	padding: 1rem 2rem;
 	@include flex-container(row, space-between, flex-end, nowrap);
 	.logo {
+		@include flex-container(row, flex-start, center, nowrap);
+		color: var.$primary-dark;
+		margin-block: 0.5rem;
 	}
 	nav {
 		@include flex-container(row, center, flex-end, nowrap);

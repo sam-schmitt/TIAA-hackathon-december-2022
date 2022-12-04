@@ -24,7 +24,7 @@ export default function Header({}) {
 	return (
 		<div id="page-header">
 			<button className="logo" onClick={() => router.push("/")}>
-				<Image src={"../logo.png"} height={30} />
+				<Image src={"../logo.png"} height={30} /> <h3>Future You</h3>
 			</button>
 			{/* <nav>
 				{links.map((item) => {

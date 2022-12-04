@@ -75,7 +75,7 @@ export default function CurrentAvatar({ size }) {
 			<Image
 				loader={myLoader}
 				src={hairTypes[hairType].file}
-				style={{ height: size, width: size }}
+				style={{ height: size, width: size, zIndex: 20 }}
 				width={size}
 				height={size}
 			/>
@@ -96,7 +96,7 @@ export default function CurrentAvatar({ size }) {
 			<Image
 				loader={myLoader}
 				src={cane}
-				style={{ height: size, width: size }}
+				style={{ height: size, width: size, zIndex: 100 }}
 				width={size}
 				height={size}
 			/>

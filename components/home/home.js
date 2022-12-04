@@ -19,15 +19,22 @@ export default function HomePage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className="content">
-				<Room />
-				<div className="avatar-container">
-					<h4>Hi, {name ? name : "Name"}!</h4>
-					<CurrentAvatar size={300} />
-					<h4>
-						Future You Is Feeling <i> {roomTypes[roomType].avatarEmotion}</i>
-					</h4>
+				<div class="room-container">
+					<Room />
 				</div>
-				<QuickActions />
+				<div className="right">
+					<h3>Hi, {name ? name : "Name"}!</h3>
+					<h4>
+						Future You is feeling <i> {roomTypes[roomType].avatarEmotion}</i>{" "}
+					</h4>
+					<h3>
+						{roomTypes[roomType].emotes.map((item) => {
+							return item;
+						})}
+					</h3>
+					<CurrentAvatar size={400} />
+					<QuickActions />
+				</div>
 			</div>
 		</main>
 	);

@@ -1,8 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import worst_room from "../../public/room-pictures/worst_room.png";
-import middle_room from "../../public/room-pictures/middle_room.png";
-import best_room from "../../public/room-pictures/best_room.png";
 import { useContext } from "react";
 import { Context } from "../../providers/Provider";
 import roomTypes from "../../avatar-state/room.js";
@@ -11,15 +8,18 @@ export default function Room({}) {
 	const myLoader = ({ src, width, quality }) => {
 		return src;
 	};
-	let size = 400;
+	let size = 700;
 
 	return (
-		<div className="room" id="room-container">
+		<div id="room">
+			<h4 className="title">Your House - circa 2078</h4>
 			<Image
+				className="picture"
 				src={roomTypes[roomType].file}
 				loader={myLoader}
-				fill
-				objectFit="cover"
+				style={{ height: size, width: size }}
+				height={size}
+				width={size * 1.25}
 			/>
 		</div>
 	);
