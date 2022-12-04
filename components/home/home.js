@@ -11,7 +11,7 @@ export default function HomePage() {
 	return (
 		<main id="home-page">
 			<Head>
-				<title>Youture</title>
+				<title>Future You</title>
 				<meta
 					name="description"
 					content="Learn about how to make your retirement fund better by visualizing your future self!"

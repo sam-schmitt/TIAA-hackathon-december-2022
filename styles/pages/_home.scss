@@ -140,6 +140,7 @@
 			.stats {
 				width: 100%;
 				@include flex-container(column, flex-start, flex-start, nowrap);
+				color: var.$primary-dark;
 				.reward {
 					@include flex-container(row, center, center, nowrap);
 					gap: 0.5rem;
