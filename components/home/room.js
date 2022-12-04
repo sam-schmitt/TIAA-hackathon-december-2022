@@ -13,7 +13,7 @@ export default function Room({}) {
 	let size = 400;
 	return (
 		<div className="room">
-			<Image src={best_room} loader={myLoader} fill objectFit="cover" />
+			<Image src={worst_room} loader={myLoader} fill objectFit="cover" />
 		</div>
 	);
 }
