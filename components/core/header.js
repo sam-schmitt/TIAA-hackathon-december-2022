@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
+
 import SettingsIcon from "@mui/icons-material/Settings";
 import {
 	Menu,
@@ -11,17 +12,20 @@ import {
 	MenuOptionGroup,
 	MenuDivider,
 	Button,
+	Image,
 } from "@chakra-ui/react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useContext } from "react";
 import { Context } from "../../providers/Provider";
 export default function Header({}) {
-	const { loggedIn, setLoggedIn } = useContext(Context);
+	const { loggedIn, setLoggedIn, name, setName } = useContext(Context);
 	const router = useRouter();
 
 	return (
 		<div id="page-header">
-			<div className="logo"></div>
+			<button className="logo" onClick={() => router.push("/")}>
+				<Image src={"../logo.png"} height={30} />
+			</button>
 			{/* <nav>
 				{links.map((item) => {
 					return (
@@ -29,34 +33,48 @@ export default function Header({}) {
 					);
 				})}
 			</nav> */}
-			<button className="primary" onClick={() => setLoggedIn(!loggedIn)}>
-				toggle login
-			</button>
-			<div class="user">
-				<Menu>
-					<MenuButton rightIcon={<ExpandMoreIcon />}>Hey name</MenuButton>
-					<MenuList>
-						<MenuItem>
-							<button
-								onClick={() => {
-									router.push("/edit-avatar");
-								}}>
-								Edit Avatar
-							</button>
-						</MenuItem>
-						<MenuItem>Create a Copy</MenuItem>
-						<MenuItem>Mark as Draft</MenuItem>
-						<MenuItem>Delete</MenuItem>
-						<MenuItem>Attend a Workshop</MenuItem>
-					</MenuList>
-				</Menu>
-			</div>
-			{/* <div className="user" onClick={() => router.push("/settings")}>
-				Hi Name
-				<div class="avatar">
-					<SettingsIcon />
+
+			{loggedIn ? (
+				<div class="user">
+					<Menu>
+						<MenuButton rightIcon={<ExpandMoreIcon />}>Hey {name}</MenuButton>
+						<MenuList className="menu-list">
+							<MenuItem>
+								<button
+									onClick={() => {
+										router.push("/onboarding/avatar");
+									}}>
+									Edit Avatar
+								</button>
+								<button
+									onClick={() => {
+										setLoggedIn(false);
+										router.push("/");
+									}}>
+									Sign Out
+								</button>
+							</MenuItem>
+						</MenuList>
+					</Menu>
 				</div>
-			</div> */}
+			) : (
+				<div className="button-group">
+					<button
+						className="primary"
+						onClick={() => router.push("/onboarding")}>
+						Sign Up
+					</button>
+					<button
+						className="secondary"
+						onClick={() => {
+							setLoggedIn(true);
+							setName("Johnny Doe");
+							router.push("/");
+						}}>
+						Login
+					</button>
+				</div>
+			)}
 		</div>
 	);
 }

@@ -5,6 +5,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import tasks from "../../avatar-state/tasks";
 import { Context } from "../../providers/Provider";
 import roomTypes from "../../avatar-state/room";
+import Image from "next/image";
 export default function QuickActions() {
 	const router = useRouter();
 	const { roomType, setRoomType } = useContext(Context);
@@ -16,34 +17,51 @@ export default function QuickActions() {
 		} else {
 		}
 	}
-
+	const myLoader = ({ src, width, quality }) => {
+		return src;
+	};
 	return (
 		<div className="quick-actions">
+			<h1>Upgrade your Future You!</h1>
 			{tasks.map((item, index) => {
 				return (
 					<div className="action-card card">
-						<div className="header">
-							<h3>{item.title}</h3>
-							{/* <ArrowForwardIcon /> */}
+						<div class="img-wrapper">
+							<div class="content">
+								<div className="header">
+									<h2>{item.title}</h2>
+									<p>{item.description}</p>
+								</div>
+								<div class="stats">
+									<button
+										class="primary"
+										onClick={() => {
+											incRoom(index);
+										}}
+										disabled={completed.includes(index)}>
+										<a
+											style={{ color: "white", textDecoration: "none" }}
+											target="_blank"
+											href="http://localhost:3000/tiaa">
+											Let's Go
+										</a>
+									</button>
+									<p>Completed: {completed.includes(index).toString()}</p>
+									{item.rewards.map(function (reward, idx) {
+										return <div>{reward}</div>;
+									})}
+								</div>
+							</div>
+							<div>
+								<Image
+									loader={myLoader}
+									src={item.image}
+									width={600}
+									height={400}
+									quality={70}
+								/>
+							</div>
 						</div>
-						<p>{item.description}</p>
-						<button
-							class="primary"
-							onClick={() => {
-								incRoom(index);
-							}}
-							disabled={completed.includes(index)}>
-							<a
-								style={{ color: "white", textDecoration: "none" }}
-								target="_blank"
-								href="http://localhost:3000/tiaa">
-								Let's Go
-							</a>
-						</button>
-						<p>Completed: {completed.includes(index).toString()}</p>
-						{item.rewards.map(function (reward, idx) {
-							return <div>{reward}</div>;
-						})}
 					</div>
 				);
 			})}

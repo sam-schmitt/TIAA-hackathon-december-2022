@@ -1,29 +1,24 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
-import { useContext } from "react";
+import React from "react";
+import EditAvatar from "../../components/avatar/edit-avatar";
+import Head from "next/head";
 import Form from "../../components/onboarding/form";
-import { Context } from "../../providers/Provider";
 
-export default function Onboarding() {
+export default function CreateAccount() {
 	const router = useRouter();
-	const { setLoggedIn } = useContext(Context);
-	useEffect(() => {
-		setLoggedIn(true);
-	}, []);
-
 	return (
-		<main>
-			<div className="content">
-				<h2>Lets Learn About You</h2>
-
-				<div class="shadow-card">
+		<main id="create-account">
+			<Head>
+				<title>Create Your Account</title>
+			</Head>
+			<div class="shadow-card">
+				<div class="form-container">
 					<Form />
+					<EditAvatar />
 				</div>
 				<button
-					className="primary"
-					onClick={() => {
-						router.push("/onboarding/avatar");
-					}}>
+					className="primary full"
+					onClick={() => router.push("/onboarding/finish")}>
 					Next
 				</button>
 			</div>

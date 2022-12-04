@@ -6,10 +6,6 @@
 	padding: 1rem 2rem;
 	@include flex-container(row, space-between, flex-end, nowrap);
 	.logo {
-		background-color: var.$primary-dark;
-		height: 2.5rem;
-		width: 2.5rem;
-		border-radius: 0.75rem;
 	}
 	nav {
 		@include flex-container(row, center, flex-end, nowrap);
@@ -28,12 +24,13 @@
 		@include flex-container(row, flex-end, center, nowrap);
 		gap: 1rem;
 		padding: 0.5rem 1rem;
-		.avatar {
-			height: 2rem;
-			width: 2rem;
-			border-radius: 1rem;
-			background-color: var.$primary-light;
-			@include flex-container(column, center, center, nowrap);
+		z-index: 100 !important;
+		.menu-list {
+			@extend .shadow-card;
+			margin-top: 0.5rem;
+			.chakra-manu__menuitem {
+				margin-block-end: 1rem;
+			}
 		}
 	}
 	background-color: var.$primary-light;

@@ -5,8 +5,9 @@ import CurrentAvatar from "../avatar/avatar";
 import HomeCTA from "./homeCTA";
 import QuickActions from "./quickActions";
 import Room from "./room";
+import roomTypes from "../../avatar-state/room";
 export default function HomePage() {
-	const { name } = useContext(Context);
+	const { name, roomType } = useContext(Context);
 	return (
 		<main id="home-page">
 			<Head>
@@ -20,9 +21,11 @@ export default function HomePage() {
 			<div className="content">
 				<Room />
 				<div className="avatar-container">
-					<h4>Hi {name ? name : "Name"}</h4>
+					<h4>Hi, {name ? name : "Name"}!</h4>
 					<CurrentAvatar size={300} />
-					<h4>Future You Is Feeling: sad</h4>
+					<h4>
+						Future You Is Feeling <i> {roomTypes[roomType].avatarEmotion}</i>
+					</h4>
 				</div>
 				<QuickActions />
 			</div>

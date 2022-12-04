@@ -8,7 +8,7 @@
 }
 .create-avatar {
 	@include flex-container(row, center, center, nowrap);
-	@extend .shadow-card;
+	// @extend .shadow-card;
 	.edit-container {
 		height: 100%;
 		@include flex-container(column, center, flex-start, nowrap);

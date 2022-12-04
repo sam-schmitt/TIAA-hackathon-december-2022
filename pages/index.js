@@ -11,14 +11,14 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Youture</title>
+				<title>Future You</title>
 				<meta
 					name="description"
 					content="Learn about how to make your retirement fund better by visualizing your future self!"
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="content">{loggedIn ? <HomePage /> : <WelcomePage />}</div>
+			<div>{loggedIn ? <HomePage /> : <WelcomePage />}</div>
 		</>
 	);
 }

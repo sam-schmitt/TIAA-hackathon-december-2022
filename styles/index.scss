@@ -1,5 +1,6 @@
 @use "./var";
 @import "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
 html,
 body {
 	padding: 0;
@@ -9,21 +10,51 @@ body {
 	width: 100vw;
 	overflow: hidden;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var.$font-title;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.5rem;
+}
+h3 {
+	font-size: 2rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1rem;
+}
+h6 {
+	font-size: 0.75rem;
+}
 * {
 	box-sizing: border-box;
 }
 main {
-	max-width: 65rem;
+	max-width: 85rem;
 	margin: 0 auto;
 	height: 90vh;
 	overflow: scroll;
-	.content {
+	> .content {
 		height: 100%;
 	}
 	.page-title {
 		&.center {
 			text-align: center;
-			@include flex-container(row, center, center, nowrap);
+			@include flex-container(column, center, center, nowrap);
+			* {
+				margin-block: 0.5rem;
+			}
+			padding-block: 1rem;
 		}
 	}
 }

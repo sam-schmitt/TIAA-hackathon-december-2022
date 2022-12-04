@@ -38,26 +38,19 @@ export default function EditAvatar() {
 		}
 	}
 	return (
-		<div>
-			<Head>
-				<title>Youture</title>
-				<meta
-					name="description"
-					content="Learn about how to make your retirement fund better by visualizing your future self!"
-				/>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<div className="page-title center">
-				<h1>Create Your Avatar!</h1>
-			</div>
+		<div className="create-avatar-wrapper">
 			<div className="content">
+				<div className="page-title center">
+					<h1>Create Your Avatar!</h1>
+					<h3>Remember, saving for retirement is paying your future self</h3>
+				</div>
 				<div class="create-avatar">
 					<CurrentAvatar size={300} />
 					<div class="edit-container" style={{ height: 300 }}>
 						<div class="row">
 							<button
 								onClick={() => {
-									setHairType(handleIncrease(hairType, hairTypes.length - 1));
+									setHairType(handleDecrease(hairType, hairTypes.length - 1));
 								}}>
 								<ArrowBackIosIcon />
 							</button>
@@ -72,7 +65,7 @@ export default function EditAvatar() {
 						<div class="row">
 							<button
 								onClick={() => {
-									setSkinType(handleIncrease(skinType, skinTypes.length - 1));
+									setSkinType(handleDecrease(skinType, skinTypes.length - 1));
 								}}>
 								<ArrowBackIosIcon />
 							</button>
@@ -88,7 +81,7 @@ export default function EditAvatar() {
 							<button
 								onClick={() => {
 									setShirtType(
-										handleIncrease(shirtType, shirtTypes.length - 1)
+										handleDecrease(shirtType, shirtTypes.length - 1)
 									);
 								}}>
 								<ArrowBackIosIcon />
@@ -108,7 +101,7 @@ export default function EditAvatar() {
 							<button
 								onClick={() => {
 									setPantsType(
-										handleIncrease(pantsType, pantsTypes.length - 1)
+										handleDecrease(pantsType, pantsTypes.length - 1)
 									);
 								}}>
 								<ArrowBackIosIcon />
@@ -126,7 +119,7 @@ export default function EditAvatar() {
 						<div className="row">
 							<button
 								onClick={() => {
-									setShoeType(handleIncrease(shoeType, shoeTypes.length - 1));
+									setShoeType(handleDecrease(shoeType, shoeTypes.length - 1));
 								}}>
 								<ArrowBackIosIcon />
 							</button>

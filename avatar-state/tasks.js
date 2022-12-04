@@ -1,14 +1,16 @@
 const tasks = [
 	{
-		image: "",
-		title: "Learn about what you can do for your retirement",
+		id: 0,
+		image: "../learn-images/learn1.jpeg",
+		title: "What can you do for your retirement?",
 		description: "It's important to get started early!",
 		rewards: ["Room Upgrade", "Avatar Happiness"],
 	},
 	{
-		image: "",
-		title: "Learn about what TIAA has available for you",
-		description: "From blah, to blah, to blah",
+		id: 1,
+		image: "../learn-images/learn2.jpeg",
+		title: "What does TIAA has available for you?",
+		description: "From investment opportunities, securing your future.",
 		rewards: ["Room Upgrade", "Avatar Happiness"],
 	},
 ];
