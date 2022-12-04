@@ -17,6 +17,7 @@
 		margin-bottom: 30vh;
 		padding-bottom: 1.5rem;
 		background-color: #ffffff40;
+		@include flex-container(column, center, center, nowrap);
 	}
 }
 #room-container {

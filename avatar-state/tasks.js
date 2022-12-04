@@ -14,7 +14,7 @@ const tasks = [
 	{
 		id: 1,
 		image: "../learn-images/learn2.jpeg",
-		title: "What does TIAA has available for you?",
+		title: "What does TIAA have available for you?",
 		description: "From investment opportunities, securing your future.",
 		rewards: [
 			{ label: "New Room!", icon: <HouseIcon /> },
