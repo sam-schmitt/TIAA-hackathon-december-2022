@@ -9,6 +9,7 @@
 		@include flex-container(row, flex-start, center, nowrap);
 		color: var.$primary-dark;
 		margin-block: 0.5rem;
+		flex: 1;
 		h3 {
 			font-weight: 600;
 			font-size: 1.8rem;
