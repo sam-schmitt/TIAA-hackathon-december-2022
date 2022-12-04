@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React, { useContext } from "react";
-import hairTypes from "../avatar-state/hair";
-import pantsTypes from "../avatar-state/pants";
-import shirtTypes from "../avatar-state/shirt";
-import shoeTypes from "../avatar-state/shoes";
-import skinTypes from "../avatar-state/skin";
-import { Context } from "../providers/Provider";
-import eyes from "../public/avatar-images/eyes_and_mouth.png";
-import cane from "../public/avatar-images/cane.png";
+import hairTypes from "../../avatar-state/hair";
+import pantsTypes from "../../avatar-state/pants";
+import shirtTypes from "../../avatar-state/shirt";
+import shoeTypes from "../../avatar-state/shoes";
+import skinTypes from "../../avatar-state/skin";
+import { Context } from "../../providers/Provider";
+import eyes from "../../public/avatar-images/eyes_and_mouth.png";
+import cane from "../../public/avatar-images/cane.png";
 export default function CurrentAvatar({ size }) {
 	const { skinType, hairType, shirtType, pantsType, shoeType } =
 		useContext(Context);

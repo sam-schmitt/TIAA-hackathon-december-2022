@@ -1,46 +1,49 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useRouter } from "next/router";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import tasks from "../../avatar-state/tasks";
+import { Context } from "../../providers/Provider";
+import roomTypes from "../../avatar-state/room";
 export default function QuickActions() {
 	const router = useRouter();
-	const actions = [
-		{
-			title: "Upgrade Your Retirement",
-			description:
-				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint",
-			icon: <AutoAwesomeIcon />,
-			url: "/upgrade",
-		},
-		{
-			title: "Upgrade Your Retirement",
-			description:
-				"Dolore amet nisi consectetur consequat adipisicing ut reprehenderit et anim. Sint culpa do voluptate ullamco nostrud ut. ",
-			icon: <AutoAwesomeIcon />,
-			url: "/upgrade",
-		},
-		{
-			title: "Upgrade Your Retirement",
-			description:
-				"Dolore amet nisi consectetur consequat  ullamco mollit aute proident est aute .",
-			icon: <AutoAwesomeIcon />,
-			url: "/upgrade",
-		},
-	];
+	const { roomType, setRoomType } = useContext(Context);
+	const [completed, setCompleted] = useState([]);
+	function incRoom(index) {
+		setCompleted([...completed, ...[index]]);
+		if (roomType !== roomTypes.length - 1) {
+			setRoomType(roomType + 1);
+		} else {
+		}
+	}
+
 	return (
-		<div>
-			{actions.map((item) => {
+		<div className="quick-actions">
+			{tasks.map((item, index) => {
 				return (
-					<div
-						className="action-card card"
-						onClick={() => router.push(item.url)}>
+					<div className="action-card card">
 						<div className="header">
 							<h3>{item.title}</h3>
-							<ArrowForwardIcon />
+							{/* <ArrowForwardIcon /> */}
 						</div>
 						<p>{item.description}</p>
-						<div className="icon">{item.icon}</div>
-						<button className="link">Learn More</button>
+						<button
+							class="primary"
+							onClick={() => {
+								incRoom(index);
+							}}
+							disabled={completed.includes(index)}>
+							<a
+								style={{ color: "white", textDecoration: "none" }}
+								target="_blank"
+								href="http://localhost:3000/tiaa">
+								Let's Go
+							</a>
+						</button>
+						<p>Completed: {completed.includes(index).toString()}</p>
+						{item.rewards.map(function (reward, idx) {
+							return <div>{reward}</div>;
+						})}
 					</div>
 				);
 			})}

@@ -1,42 +1,41 @@
 @use "../var";
 @import "../mixins";
 #home-page {
-	height: 100%;
+	z-index: 1;
 	.content {
+		z-index: 1;
 		padding: 1rem;
 		width: 100%;
 		height: 100%;
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 1fr 2fr 1fr;
 		grid-template-rows: auto 1fr;
 
-		grid-template-areas: "cta cta" "home avatar";
 		justify-content: stretch;
 		align-items: stretch;
 		gap: 1rem;
-		.home {
-			grid-area: home;
-			position: relative;
-			.room {
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-			}
-			border-radius: 0.5rem;
-			box-shadow: var.$shadow;
+		.room {
+			width: 100%;
+			height: 100%;
+			z-index: -1;
 		}
-		.avatar-container {
-			grid-area: avatar;
-			top: 0;
 
+		.avatar-container {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			background-color: #00000020;
+			color: var.$bg;
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+			border-radius: 1rem;
 			@include flex-container(column, center, center, nowrap);
 		}
 		.cta {
-			grid-area: cta;
 			z-index: 2;
 		}
 		.quick-actions {
-			grid-area: quick-actions;
+			grid-row: 1/3;
+			grid-column: 3/4;
 		}
 	}
 }

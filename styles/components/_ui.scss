@@ -20,6 +20,9 @@ button.primary {
 		#469fc7 146.95%
 	);
 	font-size: 1.25rem;
+	&.full {
+		width: 100%;
+	}
 }
 
 .action-card {

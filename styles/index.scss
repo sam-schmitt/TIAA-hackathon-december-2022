@@ -15,6 +15,11 @@ body {
 main {
 	max-width: 65rem;
 	margin: 0 auto;
+	height: 90vh;
+	overflow: scroll;
+	.content {
+		height: 100%;
+	}
 	.page-title {
 		&.center {
 			text-align: center;

@@ -13,32 +13,25 @@ import {
 	Button,
 } from "@chakra-ui/react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useContext } from "react";
+import { Context } from "../../providers/Provider";
 export default function Header({}) {
+	const { loggedIn, setLoggedIn } = useContext(Context);
 	const router = useRouter();
-	const links = [
-		{
-			text: "Home",
-			url: "/",
-		},
-		{
-			text: "Tasks",
-			url: "/tasks",
-		},
-		{
-			text: "Learn",
-			url: "/learn",
-		},
-	];
+
 	return (
 		<div id="page-header">
 			<div className="logo"></div>
-			<nav>
+			{/* <nav>
 				{links.map((item) => {
 					return (
 						<button onClick={() => router.push(item.url)}>{item.text}</button>
 					);
 				})}
-			</nav>
+			</nav> */}
+			<button className="primary" onClick={() => setLoggedIn(!loggedIn)}>
+				toggle login
+			</button>
 			<div class="user">
 				<Menu>
 					<MenuButton rightIcon={<ExpandMoreIcon />}>Hey name</MenuButton>

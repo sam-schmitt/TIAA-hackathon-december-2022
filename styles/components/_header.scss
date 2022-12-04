@@ -2,6 +2,7 @@
 @import "../mixins";
 
 #page-header {
+	z-index: 10 !important;
 	padding: 1rem 2rem;
 	@include flex-container(row, space-between, flex-end, nowrap);
 	.logo {

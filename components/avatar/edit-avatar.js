@@ -1,13 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useContext, useState } from "react";
-import hairTypes from "../avatar-state/hair";
-import pantsTypes from "../avatar-state/pants";
-import shirtTypes from "../avatar-state/shirt";
-import shoeTypes from "../avatar-state/shoes";
-import skinTypes from "../avatar-state/skin";
-import CurrentAvatar from "../components/avatar";
-import { Context } from "../providers/Provider";
+import hairTypes from "../../avatar-state/hair";
+import pantsTypes from "../../avatar-state/pants";
+import shirtTypes from "../../avatar-state/shirt";
+import shoeTypes from "../../avatar-state/shoes";
+import skinTypes from "../../avatar-state/skin";
+import CurrentAvatar from "./avatar";
+import { Context } from "../../providers/Provider";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function EditAvatar() {
@@ -23,10 +22,7 @@ export default function EditAvatar() {
 		shoeType,
 		setShoeType,
 	} = useContext(Context);
-	const myLoader = ({ src, width, quality }) => {
-		return src;
-	};
-	let size = 200;
+
 	function handleIncrease(value, max) {
 		if (value === max) {
 			return 0;
@@ -42,7 +38,7 @@ export default function EditAvatar() {
 		}
 	}
 	return (
-		<main id="edit-avatar">
+		<div>
 			<Head>
 				<title>Youture</title>
 				<meta
@@ -145,6 +141,6 @@ export default function EditAvatar() {
 					</div>
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 }

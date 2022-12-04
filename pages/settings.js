@@ -7,7 +7,7 @@ export default function Settings() {
 				<button
 					className="primary"
 					onClick={() => {
-						router.push("/edit-avatar");
+						router.push("/onboarding/avatar");
 					}}>
 					Edit Avatar
 				</button>
