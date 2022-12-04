@@ -22,36 +22,11 @@ export default function QuickActions() {
 	};
 	return (
 		<div className="quick-actions">
-			<h1>Upgrade your Future You!</h1>
+			<h2>Upgrade your Future You!</h2>
 			{tasks.map((item, index) => {
 				return (
 					<div className="action-card card">
 						<div class="img-wrapper">
-							<div class="content">
-								<div className="header">
-									<h2>{item.title}</h2>
-									<p>{item.description}</p>
-								</div>
-								<div class="stats">
-									<button
-										class="primary"
-										onClick={() => {
-											incRoom(index);
-										}}
-										disabled={completed.includes(index)}>
-										<a
-											style={{ color: "white", textDecoration: "none" }}
-											target="_blank"
-											href="http://localhost:3000/tiaa">
-											Let's Go
-										</a>
-									</button>
-									<p>Completed: {completed.includes(index).toString()}</p>
-									{item.rewards.map(function (reward, idx) {
-										return <div>{reward}</div>;
-									})}
-								</div>
-							</div>
 							<div>
 								<Image
 									loader={myLoader}
@@ -60,6 +35,31 @@ export default function QuickActions() {
 									height={400}
 									quality={70}
 								/>
+							</div>
+						</div>
+						<div class="content">
+							<div className="header">
+								<h4>{item.title}</h4>
+								<p>{item.description}</p>
+							</div>
+							<button
+								class="primary"
+								onClick={() => {
+									incRoom(index);
+								}}
+								disabled={completed.includes(index)}>
+								<a
+									style={{ color: "white", textDecoration: "none" }}
+									target="_blank"
+									href="http://localhost:3000/tiaa">
+									Let's Go
+								</a>
+							</button>
+							<div class="stats">
+								<p>Completed: {completed.includes(index).toString()}</p>
+								{item.rewards.map(function (reward, idx) {
+									return <div>{reward}</div>;
+								})}
 							</div>
 						</div>
 					</div>

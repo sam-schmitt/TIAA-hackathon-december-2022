@@ -40,9 +40,9 @@ export default function EditAvatar() {
 	return (
 		<div className="create-avatar-wrapper">
 			<div className="content">
-				<div className="page-title center">
-					<h1>Create Your Avatar!</h1>
-					<h3>Remember, saving for retirement is paying your future self</h3>
+				<div className="header">
+					<h3>Create Your Avatar!</h3>
+					<h5>Remember, saving for retirement is paying your future self</h5>
 				</div>
 				<div class="create-avatar">
 					<CurrentAvatar size={300} />

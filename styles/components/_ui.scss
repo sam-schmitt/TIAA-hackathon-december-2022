@@ -19,10 +19,10 @@ button.primary {
 	color: var.$bg;
 	background: linear-gradient(
 		270deg,
-		#0d5c7d -48.22%,
-		#005495 19.97%,
-		#025697 77.78%,
-		#0e5c80 146.95%
+		#0d5c7d -50%,
+		#005495 20%,
+		#025697 80%,
+		#0e5c80 150%
 	);
 	&.full {
 		width: 100%;
@@ -35,10 +35,15 @@ button.primary {
 	@include flex-container(row, center, center, nowrap);
 	gap: 0.5rem;
 }
+.mt {
+	margin-top: 0.5rem;
+}
 
 .action-card {
 	margin-bottom: 1rem;
-	// @extend .shadow-card;
+	@extend .shadow-card;
+	@include flex-container(column, flex-start, flex-start, nowrap);
+	padding: 0;
 
 	p {
 		margin-block: 0.5rem;
@@ -48,31 +53,28 @@ button.primary {
 			font-size: 3rem;
 		}
 	}
+	.content {
+		padding: 1rem;
+		width: 100%;
+		@include flex-container(column, flex-start, flex-start, nowrap);
+		.header {
+			margin-bottom: 1rem;
+
+			* {
+				margin-block: 0;
+			}
+		}
+		.stats {
+			width: 100%;
+			@include flex-container(row, space-between, center, nowrap);
+		}
+	}
 	.img-wrapper {
 		margin-top: 1rem;
 		box-sizing: content-box;
 		position: relative;
-		border-radius: 1rem;
+		// border-radius: 1rem;
 		overflow: hidden;
-		.content {
-			background-color: #fff;
-			padding: 1rem;
-			width: 100%;
-			position: absolute;
-			bottom: 0;
-			@include flex-container(column, flex-start, flex-start, nowrap);
-			.header {
-				margin-bottom: 1rem;
-
-				* {
-					margin-block: 0;
-				}
-			}
-			.stats {
-				width: 100%;
-				@include flex-container(row, space-between, center, nowrap);
-			}
-		}
 	}
 	/* the magic happens here */
 	.image-wrapper > div {

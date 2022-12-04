@@ -14,7 +14,7 @@ export default function Room({}) {
 	let size = 400;
 
 	return (
-		<div className="room">
+		<div className="room" id="room-container">
 			<Image
 				src={roomTypes[roomType].file}
 				loader={myLoader}

@@ -21,12 +21,14 @@
 	}
 	.user {
 		@extend .shadow-card;
+		padding: 0;
 		@include flex-container(row, flex-end, center, nowrap);
-		gap: 1rem;
-		padding: 0.5rem 1rem;
+
 		z-index: 100 !important;
 		.menu-list {
+			display: block;
 			@extend .shadow-card;
+			padding: 0;
 			margin-top: 0.5rem;
 			.chakra-manu__menuitem {
 				margin-block-end: 1rem;
